@@ -20,6 +20,7 @@
         align-items: center;
     }
     .entry{
+      display:flex;
         margin-bottom: 10px;
         position:relative;
         top:-10px;
@@ -44,12 +45,12 @@
         overflow: hidden;
         margin-bottom:20px;
         margin-left:-40px;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.208),
-                    -3px -3px 5px rgba(0, 0, 0, 0.208),
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.208),-3px -3px 5px rgba(0, 0, 0, 0.208),
                     -3px 3px 5px rgba(0, 0, 0, 0.208),
                     3px -3px 5px rgba(0, 0, 0, 0.208)
                     ;
     }
+  
     i:nth-child(2){
         background-color:rgb(54, 255, 23);
         border:none;
@@ -110,15 +111,21 @@
         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.434);
     }
     .addButton{
-        width: 40px;
-        height: 40px;
-        border:none;
-        border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:40px;
+    height:40px;
+        border:2px solid black;
+      border-radius: 50%;
         background-color: yellow;
-        font-weight: 700;
-        box-shadow: inset 0px 0px 5px rgb(62, 60, 60);
+        font-size:30px;
+        font-weight: 400;
+        box-shadow: inset 0px 0px 10px rgb(62, 60, 60);
+        margin-left:10px;
     }
     .addButton:hover{
+    border:none;
         background-color:black;
         color:yellow;
         box-shadow: inset 0px 0px 5px 2px yellow;
@@ -154,7 +161,7 @@
    <h1>My Todos</h1><br>
     <div class="entry">
         <input type="text" class="todoInput" placeholder="Add a task..." required>
-        <button class="addButton" onclick="addItem()"><i class='bx bx-plus-circle' ></i></button>
+        <div class="addButton" onclick="addItem()"><span>+</span></div>
     </div>
     <div class="filterItems">
         <button onclick="filtertasks('all')">All</button>
