@@ -10,7 +10,7 @@
     <title>My Todos</title>
 </head>
 <style>
-    *{
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Permanent+Marker&display=swap');    *{
         font-family:"Nunito",sans-serif;
     }
     body{
@@ -18,16 +18,27 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-image:url("todolist_bg2.jpg");
+        background-size:cover;
     }
     .todo_con{
         display:flex;
         flex-direction: column;
         align-items: center;
         margin-top:50px;
-        border:2px solid grey;
+        border:2px solid white;
         border-radius:20px;
         width:400px;
         height:400px;
+    }
+    .todo_con h1{
+        color:white;
+        font-family: "Cabin Sketch", sans-serif;
+        font-size:40px;
+        font-weight: 500;
+        font-style: bold;
+        margin-bottom:10px;
+        -webkit-text-stroke: 0.5px rgb(0, 255, 123);
     }
     .entry{
       display:flex;
