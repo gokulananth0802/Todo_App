@@ -19,6 +19,16 @@
         justify-content: center;
         align-items: center;
     }
+    .todo_con{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:50px;
+        border:2px solid grey;
+        border-radius:20px;
+        width:400px;
+        height:400px;
+    }
     .entry{
       display:flex;
         margin-bottom: 10px;
@@ -38,8 +48,8 @@
         align-items: center;
         background-color: lightgrey;
         padding:5px;
-        height:30px;
-        min-width:350px;
+        min-height:25px;
+        width:300px;
         border-radius:30px;
         position:relative;
         overflow: hidden;
@@ -54,7 +64,7 @@
     i:nth-child(2){
         background-color:rgb(54, 255, 23);
         border:none;
-        height:40px;
+        height:35px;
         width:40px;
         font-size:27px;
         display:flex;
@@ -62,12 +72,12 @@
         align-items: center;
         position:absolute;
         top:0px;
-        left:280px;
+        left:231px;
     }
     i:nth-child(3){
         background-color: rgb(233, 5, 5);
         border:none;
-        height:40px;
+        height:35px;
         width:40px;
         font-size: 25px;
         display:flex;
@@ -75,7 +85,7 @@
         align-items: center;
         position:absolute;
         top:0px;
-        left:320px;
+        left:270px;
     }
     i:nth-child(2):hover{
         background-color:black;
@@ -156,9 +166,19 @@
         top:1px;
         left:-1px;
     }
+    .list-container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:90%;
+        padding:20px 0px;
+        padding-left:40px;
+        overflow:auto;
+    }
 </style>
 <body>
-   <h1>My Todos</h1><br>
+   <div class="todo_con">
+    <h1>My Todos</h1><br>
     <div class="entry">
         <input type="text" class="todoInput" placeholder="Add a task..." required>
         <div class="addButton" onclick="addItem()"><span>+</span></div>
@@ -169,8 +189,8 @@
         <button onclick="filtertasks('incomplete')">Incomplete</button>
     </div>
     <ul class="list-container">
-        
     </ul>
+   </div>
 </body>
 <script>
   var ul = document.querySelector('.list-container');
@@ -181,6 +201,11 @@
     ul.appendChild(newList);
     input.value = '';
   }
+  input.addEventListener("keydown",(event) =>{
+    if(event.key === "Enter"){
+        addItem();
+    }
+  })
   function completeItem(){
     var listItem = event.target.previousElementSibling;
     listItem.innerHTML = "<s>"+listItem.innerHTML+"</s>";
